@@ -9,6 +9,6 @@ class Car (
 
     //first field is auto-generated upon creating object
     @PrimaryKey(autoGenerate = true) val id: Int,
-    @ColumnInfo(name = "car") val word: String
+    @ColumnInfo(name = "car") val car: String
 
 )

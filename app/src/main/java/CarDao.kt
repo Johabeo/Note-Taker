@@ -9,8 +9,9 @@ import kotlinx.coroutines.flow.Flow
 interface CarDao {
 
     //annotation w/ SQL for READ/getter method
+    //Flow observes in real time async on background thread
     @Query("SELECT * FROM car_table ORDER BY car ASC")
-    fun getAlphabetizedWords(): Flow<List<Car>>
+    fun getAlphabetizedCars(): Flow<List<Car>>
 
     //annotation auto-generates SQL commands, On Conflict Strategy
     //ignores two cases of the same word

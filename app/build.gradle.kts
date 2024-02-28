@@ -15,7 +15,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.project0note_taker"
-        minSdk = 34
+        minSdk = 31
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -56,11 +56,22 @@ android {
 }
 
 dependencies {
-    val room_version = "2.6.1"
 
+
+    val room_version = "2.6.1"
+    
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    // view-model dependency, has new dependency
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+
+    // room dependency
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
 
+    // Flow dependency
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:$room_version")
 
     // To use Kotlin annotation processing tool (ksp)
