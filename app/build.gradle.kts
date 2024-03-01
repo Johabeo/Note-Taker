@@ -36,8 +36,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = "1.8"
@@ -71,6 +71,10 @@ dependencies {
 //    val espressoVersion = "3.4.0"
 //    val androidxJunitVersion = "1.1.3"
 
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    // For control over item selection of both touch and mouse driven selection
+    implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
+
     implementation ("androidx.appcompat:appcompat:1.6.1")
     implementation ("androidx.activity:activity-ktx:1.8.2")
 
@@ -98,5 +102,5 @@ dependencies {
 
     // Testing
     testImplementation ("junit:junit:4.13.2")
-    androidTestImplementation ("androidx.arch.core:core-testing:4.13.")
+    androidTestImplementation ("androidx.arch.core:core-testing:2.2.0")
 }

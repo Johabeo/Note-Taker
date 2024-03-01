@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Project 0 Note-Taker</string>
-    <string name="add_car">adding car to database</string>
+    <string name="add_car">add car</string>
+    <string name="hint_car">Car...</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
 </resources>

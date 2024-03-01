@@ -1,5 +1,4 @@
 package com.example.project0note_taker
-
 import Car
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-class CarListAdapter : ListAdapter<Car, CarViewHolder>(CarsComparator()) {
+class CarListAdapter : ListAdapter<Car, CarListAdapter.CarViewHolder>(CarsComparator()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarViewHolder {
         return CarViewHolder.create(parent)
@@ -18,10 +17,6 @@ class CarListAdapter : ListAdapter<Car, CarViewHolder>(CarsComparator()) {
     override fun onBindViewHolder(holder: CarViewHolder, position: Int) {
         val current = getItem(position)
         holder.bind(current.car)
-    }
-
-    override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     class CarViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
