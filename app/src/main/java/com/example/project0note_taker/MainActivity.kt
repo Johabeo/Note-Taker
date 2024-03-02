@@ -1,8 +1,5 @@
 package com.example.project0note_taker
 
-import Car
-import CarViewModel
-import CarViewModelFactory
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -44,14 +41,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
         super.onActivityResult(requestCode, resultCode, intentData)
 
         if (requestCode == newCarActivityRequestCode && resultCode == Activity.RESULT_OK) {
             intentData?.getStringExtra(NewCarActivity.EXTRA_REPLY)?.let { reply ->
-                val word = Car(null, reply)
-                carViewModel.insert(word)
+                val car = Car( reply)
+                carViewModel.insert(car)
             }
         } else {
             Toast.makeText(
